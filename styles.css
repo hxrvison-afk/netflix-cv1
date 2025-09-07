@@ -1,0 +1,72 @@
+/* Theme tokens */
+:root{--bg:#0b0b0b;--panel:#141414;--ink:#ececec;--muted:#a6a6a6;--accent:#e50914;--border:#222;--card:#141414;--radius:14px;--shadow:0 10px 24px rgba(0,0,0,.45)}
+:root[data-theme="light"]{--bg:#f9f9fb;--panel:#ffffff;--ink:#1b1b1b;--muted:#555;--accent:#e50914;--border:#e6e6e9;--card:#ffffff;--shadow:0 10px 24px rgba(0,0,0,.08)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+html,body{margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font:15px/1.5 system-ui,Segoe UI,Arial,sans-serif}
+
+/* Header */
+.app-header{position:sticky;top:0;z-index:40;display:flex;gap:16px;align-items:center;justify-content:space-between;padding:10px clamp(12px,2vw,20px);background:color-mix(in oklab, var(--bg) 90%, black 10%);backdrop-filter:blur(8px);border-bottom:1px solid var(--border)}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.06em}
+.dot{width:12px;height:12px;border-radius:50%;background:var(--accent);box-shadow:0 0 18px var(--accent)}
+.wordmark{font-size:14px}
+.top-nav a{color:var(--ink);opacity:.9;text-decoration:none;margin-left:14px}
+.top-nav a:hover{opacity:1}
+.actions{display:flex;gap:10px}
+.btn{padding:8px 12px;border-radius:10px;border:1px solid var(--border);background:var(--accent);color:#fff;font-weight:700;cursor:pointer}
+.btn.ghost{background:transparent;color:var(--ink)}
+
+/* Sticky season tabs */
+.season-tabs{position:sticky;top:56px;z-index:35;display:flex;gap:10px;flex-wrap:wrap;padding:8px clamp(12px,2vw,20px);background:color-mix(in oklab, var(--bg) 92%, black 8%);border-bottom:1px solid var(--border)}
+.season-tabs a{padding:8px 12px;border-radius:999px;background:var(--panel);border:1px solid var(--border);color:var(--ink);text-decoration:none;opacity:.9}
+.season-tabs a.active{outline:2px solid color-mix(in oklab, var(--accent) 60%, white 40%);opacity:1}
+
+/* Hero */
+.hero{min-height:50vh;display:grid;place-items:center;background-image:var(--hero);background-size:cover;background-position:center;position:relative}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg, rgba(0,0,0,.35), rgba(0,0,0,.6))}
+.hero .hero-inner{position:relative;z-index:1;max-width:1180px;padding:40px clamp(12px,2vw,20px) 24px;text-align:center}
+.show-title{font-size:clamp(26px,6vw,52px);margin:0 0 8px;text-shadow:0 10px 30px rgba(0,0,0,.6)}
+.tagline{max-width:900px;margin:0 auto 8px}
+.contact a{color:#fff}
+
+/* Panels */
+.panel{max-width:1180px;margin:0 auto;padding:20px clamp(12px,2vw,20px) 30px}
+.panel h2{font-size:clamp(20px,4vw,30px);margin:12px 0 10px}
+.panel h2::after{content:"";display:block;width:56px;height:3px;background:var(--accent);border-radius:3px}
+
+/* Episodes grid */
+.episodes{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:clamp(10px,1.5vw,18px)}
+.card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
+.card h3{font-size:16px;margin:10px 12px 4px}
+.years{color:var(--muted);font-weight:600;font-size:.9em}
+.synopsis{color:var(--muted);margin:0 12px 10px}
+.thumb{display:block;aspect-ratio:16/9;background:#0e0e0e}
+.thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.more.link{display:inline-block;margin:0 12px 12px;padding:8px 12px;border:0;border-radius:10px;background:var(--accent);color:#fff;font-weight:700;text-decoration:none}
+
+/* About */
+.about .about-wrap{display:grid;grid-template-columns:120px 1fr;gap:16px;align-items:center}
+.about .me{width:120px;height:120px;border-radius:50%;object-fit:cover;border:2px solid var(--border)}
+.about .logos{display:flex;gap:10px;margin-top:10px}
+.about .logos img{height:38px;background:var(--panel);border-radius:10px;padding:6px;border:1px solid var(--border)}
+
+/* Extras */
+.extras .extras-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:clamp(10px,1.5vw,18px)}
+.extra{background:var(--panel);border:1px solid var(--border);border-radius:var(--radius);padding:14px}
+
+/* Footer */
+.site-footer{text-align:center;color:var(--muted);padding:30px clamp(12px,2vw,20px)}
+
+/* Episode page */
+.ep-hero{min-height:38vh;display:grid;place-items:end;background-size:cover;background-position:center;border-bottom:1px solid var(--border)}
+.ep-hero .wrap{max-width:1180px;width:100%;padding:30px clamp(12px,2vw,20px)}
+.breadcrumbs{display:flex;gap:8px;align-items:center;margin-bottom:8px}
+.breadcrumbs a{color:#fff;text-decoration:none;opacity:.9}
+.ep-title{font-size:clamp(24px,5vw,40px);margin:0}
+.details-grid{max-width:1180px;margin:0 auto;padding:20px clamp(12px,2vw,20px) 40px;display:grid;grid-template-columns:1.2fr .8fr;gap:20px}
+.cardish{background:var(--panel);border:1px solid var(--border);border-radius:14px;padding:16px}
+.cardish h3{margin-top:0}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:10px}
+.gallery img{width:100%;height:120px;object-fit:cover;border-radius:8px;border:1px solid var(--border)}
+@media (max-width:900px){.details-grid{grid-template-columns:1fr}}
